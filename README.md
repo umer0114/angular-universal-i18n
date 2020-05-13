@@ -1,27 +1,14 @@
-# DemoProject
+# Angular Universal with integrated i18n
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5. It has angular universal and i18n integrated simultaneously.
 
-## Development server
+For the development of this project, I have created two separate builds; One for client side, while the other for server side. For localization a separate build for each language is made so as to support localization for both server/client side. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Here is the demo video: https://umer0114.tinytake.com/tt/NDI4MzM2OF8xMzQ1MDIwNw
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+For server side builds, following are the build commands:
+    "serve:ssr-en": "set LANGUAGE=en && node dist/demo-project/server/en/main.js",
+    "serve:ssr-pl": "set LANGUAGE=pl && node dist/demo-project/server/pl/main.js",
+    "build:ssr": "ng build --prod --localize && ng run demo-project:server:allLocales",
+    
+Currently, this project supports English 'en' and Polish 'pl' languages. 
